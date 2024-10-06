@@ -1,0 +1,155 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(108, 113, 113); */
+    /* display: flex; */
+    font-family: 'minecraft', sans-serif;
+}
+body{
+    display: flex;
+    position: relative;
+}
+.right{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    width: 100%;
+}
+.boardTile{
+    box-sizing: border-box; /*the combination of flex and aspect ratio affects the border, therefor this line ensures the correct borders are rendered*/
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 100%; */
+    /* display: flex; */
+    aspect-ratio: 1; 
+    background-image: url('./sky.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.boardTile:hover{
+    opacity: 0.7; /* Slightly transparent */
+}
+
+.boardTile.soil:hover,
+.boardTile.rock:hover,
+.boardTile.grass:hover,
+.boardTile.treeTrunk:hover,
+.boardTile.leaves:hover {
+    outline: 1px solid rgb(242, 255, 208);
+    opacity: 0.7; /* Slightly transparent */
+}
+.boardTile.rock, .boardTile.soil, .boardTile.grass, .boardTile.treeTrunk, .boardTile.leaves {
+    box-sizing: border-box;
+}
+.rock{
+    background-image: url('./rocks.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.soil{
+    background-image: url('./ground.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.grass{
+    background-image: url('./grass.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.treeTrunk{
+    background-image: url('/treetrunk.avif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.leaves{
+    background-image: url('./leaves.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+/* menu */
+.left{
+    position: fixed; /* Keep it floating on the screen */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    height: 100vh; 
+    z-index: 10; /* Ensures it's always on top */
+}
+
+.left div{
+    margin: 5%;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left div:hover{
+    opacity: 0.9; 
+}
+.left .clicked{
+    background-color: aliceblue;
+}
+#Axe{
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor:alias;
+
+}
+
+#rockPlacer{
+    background-image: url('./rocks.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+}
+#soilPlacer{
+    background-image: url('./ground.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+    /* border-radius: 10px; */
+}
+
+#grassPlacer{
+    background-image: url('./grass.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+}
+#trunkPlacer{
+    background-image: url('./treetrunk.avif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+}
+#leavesPlacer{
+    background-image: url('./leaves.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+}
