@@ -3,35 +3,39 @@ html, body{
     padding: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgb(108, 113, 113); */
-    /* display: flex; */
     font-family: 'minecraft', sans-serif;
 }
 body{
     display: flex;
-    position: relative;
+    /* justify-content: center;
+    align-items: center; */
 }
 .right{
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
 }
 .row{
     display: flex;
-    width: 100%;
+    width: 100vw;
 }
 .boardTile{
     box-sizing: border-box; /*the combination of flex and aspect ratio affects the border, therefor this line ensures the correct borders are rendered*/
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: calc(100vw/15);
+    height: calc(100vh / 15);
     /* height: 100%; */
     /* display: flex; */
-    aspect-ratio: 1; 
-    background-image: url('./sky.png'); 
+    /* aspect-ratio: 1/1;  */
+    background-image: url('./pics/sky.png'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -47,31 +51,31 @@ body{
     outline: 1px solid rgb(242, 255, 208);
     opacity: 0.7; /* Slightly transparent */
 }
-.boardTile.rock, .boardTile.soil, .boardTile.grass, .boardTile.treeTrunk, .boardTile.leaves {
+/* .boardTile.rock, .boardTile.soil, .boardTile.grass, .boardTile.treeTrunk, .boardTile.leaves {
     box-sizing: border-box;
-}
+} */
 .rock{
-    background-image: url('./rocks.jfif'); 
+    background-image: url('./pics/rocks.jfif'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
 .soil{
-    background-image: url('./ground.jpg'); 
+    background-image: url('./pics/ground.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
 .grass{
-    background-image: url('./grass.jfif'); 
+    background-image: url('./pics/grass.jfif'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
 .treeTrunk{
-    background-image: url('/treetrunk.avif'); 
+    background-image: url('/pics/treetrunk.avif'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
 .leaves{
-    background-image: url('./leaves.jfif'); 
+    background-image: url('./pics/leaves.jfif'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -79,13 +83,13 @@ body{
 /* menu */
 .left{
     position: fixed; /* Keep it floating on the screen */
-    top: 0;
+    top: 10%;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 10%;
-    height: 100vh; 
+    height: 80vh; 
     z-index: 10; /* Ensures it's always on top */
 }
 
@@ -112,7 +116,7 @@ body{
 }
 
 #rockPlacer{
-    background-image: url('./rocks.jfif');  
+    background-image: url('./pics/rocks.jfif');  
     background-size: cover; 
     background-repeat: no-repeat;
     width: 30%;
@@ -120,7 +124,7 @@ body{
     aspect-ratio: 1; 
 }
 #soilPlacer{
-    background-image: url('./ground.jpg'); 
+    background-image: url('./pics/ground.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat;
     width: 30%;
@@ -130,7 +134,7 @@ body{
 }
 
 #grassPlacer{
-    background-image: url('./grass.jfif');  
+    background-image: url('./pics/grass.jfif');  
     background-size: cover; 
     background-repeat: no-repeat;
     width: 30%;
@@ -138,7 +142,7 @@ body{
     aspect-ratio: 1; 
 }
 #trunkPlacer{
-    background-image: url('./treetrunk.avif');  
+    background-image: url('./pics/treetrunk.avif');  
     background-size: cover; 
     background-repeat: no-repeat;
     width: 30%;
@@ -146,7 +150,7 @@ body{
     aspect-ratio: 1; 
 }
 #leavesPlacer{
-    background-image: url('./leaves.jfif');  
+    background-image: url('./pics/leaves.jfif');  
     background-size: cover; 
     background-repeat: no-repeat;
     width: 30%;
