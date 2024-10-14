@@ -6,7 +6,7 @@ let selectedTool=null;
 //menu 
 const menu=document.getElementsByClassName('left')[0];
 // console.log(menu);
-const toolsArray=['Axe','Pickaxe','Shovel','PurningTool','rockPlacer','grassPlacer','soilPlacer','trunkPlacer','leavesPlacer'];
+const toolsArray=['Axe','Pickaxe','Shovel','rockPlacer','grassPlacer','soilPlacer','trunkPlacer','leavesPlacer'];
 
 //create tools:
 for (i=0; i<toolsArray.length; i++){
@@ -26,26 +26,34 @@ for (i=0; i<toolsArray.length; i++){
     menu.appendChild(tool);
 }
 
-//create counters
+// //create counters
 const Axe=document.getElementById('Axe');
-Axe.innerText ='Axe';
-
-const Pickaxe=document.getElementById('Pickaxe');
-Pickaxe.innerText ='Pickaxe';
+const axeImage = document.createElement('img');
+axeImage.src='./pics/Axe.png'
+axeImage.alt = 'Axe'; 
+Axe.appendChild(axeImage);
 
 const Shovel=document.getElementById('Shovel');
-Shovel.innerText ='Shovel';
+const shovelImage = document.createElement('img');
+shovelImage.src='./pics/Shovel.png'
+shovelImage.alt = 'Shovel'; 
+Shovel.appendChild(shovelImage);
 
-const PurningTool=document.getElementById('PurningTool');
-PurningTool.innerText ='PurningTool';
+const Pickaxe=document.getElementById('Pickaxe');
+const pickaxeImage = document.createElement('img');
+pickaxeImage.src='./pics/Pickaxe.png'
+pickaxeImage.alt = 'Pickaxe'; 
+Pickaxe.appendChild(pickaxeImage);
 
 const rockCounter=document.getElementById('rockPlacer');
 rockCounter.innerText ='0';
-let currentRockCount=parseInt(rockPlacer.innerText);
+let currentRockCount=parseInt(rockPlacer.innerText); //formating text to int
+rockCounter.style.display = 'none';
 
 const soilCounter=document.getElementById('soilPlacer');
 soilCounter.innerText ='0';
 let currentSoilCount=parseInt(soilPlacer.innerText);
+
 // const soilPlacerPic=document.createElement('div')
 // soilPlacerPic.setAttribute('id','soilPlacerPic')
 // soilCounter.appendChild(soilPlacerPic);
@@ -81,6 +89,7 @@ for(let i=1; i<16; i++){
                     rowTile.classList.remove('rock');
                     console.log(`remove the rock from:, ${tileID}`);
                 //counter 
+                rockCounter.style.display = 'block';
                     currentRockCount+=1;
                     rockCounter.innerText=currentRockCount;
                     // rockCounter.setAttribute('id','rockPlacer');
@@ -145,7 +154,7 @@ for(let i=1; i<16; i++){
                         trunkCounter.innerText=currentTrunkCount;
                     }}
                 //leaves     
-                if(rowTile.classList.contains('leaves') && selectedTool==='PurningTool'){
+                if(rowTile.classList.contains('leaves') && selectedTool==='Axe'){
                     rowTile.classList.remove('leaves');
                     console.log(`remove the leaves from:, ${tileID}`);
                 
